@@ -1,0 +1,29 @@
+{
+	auto_https off
+}
+
+:{$PORT} {
+	encode zstd gzip
+
+	@path path {$PATH_vless} {$PATH_trojan} {$PATH_vmess} {$PATH_shadowsocks}
+	handle @path {
+		reverse_proxy :4000 {
+			@error status 5xx 4xx
+			handle_response @error {
+				error 404
+			}
+		}
+	}
+
+	handle {
+		root * ./page
+		try_files 404
+		file_server
+
+		header Cache-Control max-age=31536000
+	}
+
+	handle_errors {
+		redir * /
+	}
+}
