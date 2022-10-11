@@ -39,6 +39,8 @@ vless + vmess + trojan + shadowsocks2022
 为兼容**shadowsocks2022**，生成的UUID需去除所有`-`
 
 > 例：*1eb6e917-774b-4a84-aff6-b058577c60a5* => *1eb6e917774b4a84aff6b058577c60a5*
+> 
+> 虽然配置的*UUID*里去除了`-`，但是<u>**vmess/vless**</u>可以使用带`-`的<u>1eb6e917-774b-4a84-aff6-b058577c60a5</u>作为*用户ID*（针对SagerNet连不上的情况）
 
 默认路径：**/协议名称/设置的UUID**
 
