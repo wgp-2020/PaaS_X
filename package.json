@@ -1,0 +1,7 @@
+{
+  "name": "npm_x",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "cd main && sh start.sh"
+  }
+}
